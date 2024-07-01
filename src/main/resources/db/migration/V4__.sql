@@ -1,0 +1,11 @@
+ALTER TABLE fetcher
+    ADD created_at TIMESTAMP WITHOUT TIME ZONE;
+
+ALTER TABLE fetcher
+    ADD update_at TIMESTAMP WITHOUT TIME ZONE;
+
+DROP SEQUENCE advertiser_seq CASCADE;
+
+DROP SEQUENCE filter_seq CASCADE;
+
+DROP SEQUENCE product_seq CASCADE;

@@ -1,0 +1,5 @@
+ALTER TABLE fetcher
+    ALTER COLUMN created_at SET NOT NULL;
+
+ALTER TABLE fetcher
+    ALTER COLUMN update_at SET NOT NULL;
