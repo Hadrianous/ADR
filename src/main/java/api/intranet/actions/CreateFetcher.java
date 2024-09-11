@@ -15,11 +15,15 @@ import java.util.Optional;
 @RestController
 public class CreateFetcher {
 
-    @Autowired
-    private CreateFetcherHandler handler;
+    private final CreateFetcherHandler handler;
+
+    private final CreateFetcherJsonResponder<GetFetcherOutput> responder;
 
     @Autowired
-    private CreateFetcherJsonResponder<GetFetcherOutput> responder;
+    public CreateFetcher(CreateFetcherHandler handler, CreateFetcherJsonResponder<GetFetcherOutput> responder) {
+        this.handler = handler;
+        this.responder = responder;
+    }
 
     @PostMapping("/fetcher")
     public ResponseEntity<Optional<GetFetcherOutput>> save(@RequestBody NewFetcherInput fetcher) {
