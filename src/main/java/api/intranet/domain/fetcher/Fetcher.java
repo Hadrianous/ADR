@@ -1,13 +1,13 @@
-package api.intranet.Domain.Entity;
+package api.intranet.domain.fetcher;
 
-import api.intranet.Domain.Fetcher.FetcherStatus;
 import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 
 import java.util.Objects;
 
-@jakarta.persistence.Entity
+@Entity
 @Table(name = "fetcher")
-public class Fetcher extends Entity {
+public class Fetcher extends api.intranet.domain.persistence.Entity {
 
     @Column(unique = true, nullable = false)
     private String name;

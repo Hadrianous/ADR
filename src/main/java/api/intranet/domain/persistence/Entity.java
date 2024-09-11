@@ -1,4 +1,4 @@
-package api.intranet.Domain.Entity;
+package api.intranet.domain.persistence;
 
 import jakarta.persistence.*;
 

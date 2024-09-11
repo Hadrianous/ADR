@@ -1,18 +1,19 @@
-package api.intranet.Responder;
+package api.intranet.responders;
 
-import api.intranet.Domain.Fetcher.Output.GetFetcherOutput;
-import api.intranet.Responder.exceptions.NotFoundException;
-import api.intranet.Responder.exceptions.ProcessingError;
+import api.intranet.domain.fetcher.output.GetFetcherOutput;
+import api.intranet.responders.exceptions.NotFoundException;
+import api.intranet.responders.exceptions.ProcessingError;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Optional;
 
-@Component
+@Service
 public class CreateFetcherJsonResponder<T extends GetFetcherOutput> extends GetFetcherJsonResponder<GetFetcherOutput> {
 
+    @Override
     public ResponseEntity<Optional<GetFetcherOutput>> response(Optional<GetFetcherOutput> object) {
 
         if (object.isEmpty()) {

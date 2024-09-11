@@ -1,9 +1,9 @@
-package api.intranet.Action;
+package api.intranet.actions;
 
-import api.intranet.Domain.Fetcher.Input.NewFetcherInput;
-import api.intranet.Domain.Fetcher.CreateFetcherHandler;
-import api.intranet.Domain.Fetcher.Output.GetFetcherOutput;
-import api.intranet.Responder.CreateFetcherJsonResponder;
+import api.intranet.domain.fetcher.input.NewFetcherInput;
+import api.intranet.domain.fetcher.handlers.CreateFetcherHandler;
+import api.intranet.domain.fetcher.output.GetFetcherOutput;
+import api.intranet.responders.CreateFetcherJsonResponder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

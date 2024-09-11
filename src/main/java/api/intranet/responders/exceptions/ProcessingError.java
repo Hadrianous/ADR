@@ -1,4 +1,4 @@
-package api.intranet.Responder.exceptions;
+package api.intranet.responders.exceptions;
 
 public class ProcessingError extends RuntimeException {
     public ProcessingError(String message) {

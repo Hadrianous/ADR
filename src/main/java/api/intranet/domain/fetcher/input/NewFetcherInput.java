@@ -1,43 +1,35 @@
-package api.intranet.Domain.Fetcher.Output;
+package api.intranet.domain.fetcher.input;
 
-import api.intranet.Domain.Entity.Fetcher;
-import api.intranet.Domain.Fetcher.FetcherStatus;
+import api.intranet.domain.fetcher.Fetcher;
+import api.intranet.domain.fetcher.FetcherStatus;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.validation.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
  * DTO for {@link Fetcher}
  */
-public class GetFetcherOutput extends EntityOutput implements Serializable {
-    @Override
-    public Long getId() {
-        return id;
-    }
+public class NewFetcherInput implements Serializable {
 
-    @Override
-    public String getEntityName() {
-        return entityName;
-    }
-
-    private final Long id;
-    private final LocalDateTime createdAt;
-    private final LocalDateTime updateAt;
+    @NotBlank
     private final String name;
+    @NotBlank
+    @Enumerated(EnumType.ORDINAL)
     private final String type;
     private final String url;
     private final String tag;
+    @NotBlank
     private final Integer frequency;
+    @NotBlank
     private final FetcherStatus status;
+    @DateTimeFormat
     private final String dateFormat;
 
-    protected final String entityName = "Fetcher";
-
-    public GetFetcherOutput(Long id, LocalDateTime createdAt, LocalDateTime updateAt, String name, String type, String url, String tag, Integer frequency, FetcherStatus status, String dateFormat) {
-        this.id = id;
-        this.createdAt = createdAt;
-        this.updateAt = updateAt;
+    public NewFetcherInput(String name, String type, String url, String tag, Integer frequency, FetcherStatus status, String dateFormat) {
         this.name = name;
         this.type = type;
         this.url = url;
@@ -45,14 +37,6 @@ public class GetFetcherOutput extends EntityOutput implements Serializable {
         this.frequency = frequency;
         this.status = status;
         this.dateFormat = dateFormat;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdateAt() {
-        return updateAt;
     }
 
     public String getName() {
@@ -87,11 +71,8 @@ public class GetFetcherOutput extends EntityOutput implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        GetFetcherOutput entity = (GetFetcherOutput) o;
-        return Objects.equals(this.id, entity.id) &&
-                Objects.equals(this.createdAt, entity.createdAt) &&
-                Objects.equals(this.updateAt, entity.updateAt) &&
-                Objects.equals(this.name, entity.name) &&
+        NewFetcherInput entity = (NewFetcherInput) o;
+        return Objects.equals(this.name, entity.name) &&
                 Objects.equals(this.type, entity.type) &&
                 Objects.equals(this.url, entity.url) &&
                 Objects.equals(this.tag, entity.tag) &&
@@ -102,15 +83,12 @@ public class GetFetcherOutput extends EntityOutput implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, createdAt, updateAt, name, type, url, tag, frequency, status, dateFormat);
+        return Objects.hash(name, type, url, tag, frequency, status, dateFormat);
     }
 
     @Override
     public String toString() {
         return getClass().getSimpleName() + "(" +
-                "id = " + id + ", " +
-                "createdAt = " + createdAt + ", " +
-                "updateAt = " + updateAt + ", " +
                 "name = " + name + ", " +
                 "type = " + type + ", " +
                 "url = " + url + ", " +

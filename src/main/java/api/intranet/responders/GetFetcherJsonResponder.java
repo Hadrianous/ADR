@@ -1,8 +1,7 @@
-package api.intranet.Responder;
+package api.intranet.responders;
 
-import api.intranet.Domain.Fetcher.Output.GetFetcherOutput;
-import api.intranet.Responder.exceptions.NotFoundException;
-import api.intranet.Responder.exceptions.ProcessingError;
+import api.intranet.domain.fetcher.output.GetFetcherOutput;
+import api.intranet.responders.exceptions.NotFoundException;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Optional;
@@ -18,4 +17,5 @@ public abstract class GetFetcherJsonResponder<T extends GetFetcherOutput>{
         return ResponseEntity.ok()
                 .body(object);
     }
+
 }

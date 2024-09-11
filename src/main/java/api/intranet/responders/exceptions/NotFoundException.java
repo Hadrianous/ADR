@@ -1,4 +1,4 @@
-package api.intranet.Responder.exceptions;
+package api.intranet.responders.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

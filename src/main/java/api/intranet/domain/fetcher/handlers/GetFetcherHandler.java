@@ -1,6 +1,7 @@
-package api.intranet.Domain.Fetcher;
+package api.intranet.domain.fetcher.handlers;
 
-import api.intranet.Domain.Fetcher.Output.GetFetcherOutput;
+import api.intranet.domain.fetcher.Fetchers;
+import api.intranet.domain.fetcher.output.GetFetcherOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
