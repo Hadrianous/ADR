@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 import java.util.Optional;
 
 @Service
-public class CreateFetcherJsonResponder<T extends GetFetcherOutput> extends GetFetcherJsonResponder<GetFetcherOutput> {
+public class CreateFetcherJsonResponder extends GetFetcherJsonResponder<GetFetcherOutput> {
 
     @Override
     public ResponseEntity<Optional<GetFetcherOutput>> response(Optional<GetFetcherOutput> object) {

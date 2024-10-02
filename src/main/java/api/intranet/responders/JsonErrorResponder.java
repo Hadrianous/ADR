@@ -46,15 +46,16 @@ public class JsonErrorResponder {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<String> handleNotFoundExceptions() {
-        return ResponseEntity.ok()
-                .body("{\"message\":\"Not Found\"}");
+    public Map<String, String> handleNotFoundExceptions() {
+        final HashMap<String, String> result = new HashMap<>();
+        result.put("message", "Not found");
+        return result;
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(AlreadyExistsEntityException.class)
     public ResponseEntity<String> handleAlreadyExistsExceptions(AlreadyExistsEntityException e) {
-        return ResponseEntity.ok()
+        return ResponseEntity.badRequest()
                 .body("{\"message\":\""+e.getMessage()+"\"}");
     }
 }

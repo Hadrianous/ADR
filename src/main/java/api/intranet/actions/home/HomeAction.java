@@ -1,4 +1,4 @@
-package api.intranet.actions;
+package api.intranet.actions.home;
 
 import api.intranet.responders.HomeHTMLResponder;
 import org.springframework.http.ResponseEntity;

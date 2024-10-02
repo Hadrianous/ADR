@@ -1,4 +1,4 @@
-package api.intranet.actions;
+package api.intranet.actions.fetcher;
 
 import api.intranet.domain.fetcher.input.NewFetcherInput;
 import api.intranet.domain.fetcher.handlers.CreateFetcherHandler;
@@ -17,10 +17,10 @@ public class CreateFetcher {
 
     private final CreateFetcherHandler handler;
 
-    private final CreateFetcherJsonResponder<GetFetcherOutput> responder;
+    private final CreateFetcherJsonResponder responder;
 
     @Autowired
-    public CreateFetcher(CreateFetcherHandler handler, CreateFetcherJsonResponder<GetFetcherOutput> responder) {
+    public CreateFetcher(CreateFetcherHandler handler, CreateFetcherJsonResponder responder) {
         this.handler = handler;
         this.responder = responder;
     }

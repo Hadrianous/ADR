@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public abstract class GetFetcherJsonResponder<T extends GetFetcherOutput>{
 
-    public ResponseEntity<Optional<GetFetcherOutput>> response(Optional<GetFetcherOutput> object) {
+    public ResponseEntity<Optional<T>> response(Optional<T> object) {
         if (object.isEmpty()) {
             throw new NotFoundException();
         }

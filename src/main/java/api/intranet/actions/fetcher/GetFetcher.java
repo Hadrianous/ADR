@@ -1,4 +1,4 @@
-package api.intranet.actions;
+package api.intranet.actions.fetcher;
 
 import api.intranet.domain.fetcher.handlers.GetFetcherHandler;
 import api.intranet.domain.fetcher.output.GetFetcherOutput;
