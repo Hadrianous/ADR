@@ -9,7 +9,6 @@ import java.util.Optional;
 public abstract class GetFetcherJsonResponder<T extends GetFetcherOutput>{
 
     public ResponseEntity<Optional<GetFetcherOutput>> response(Optional<GetFetcherOutput> object) {
-
         if (object.isEmpty()) {
             throw new NotFoundException();
         }
@@ -17,5 +16,4 @@ public abstract class GetFetcherJsonResponder<T extends GetFetcherOutput>{
         return ResponseEntity.ok()
                 .body(object);
     }
-
 }

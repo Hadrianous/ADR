@@ -1,5 +1,6 @@
 package api.intranet.responders;
 
+import api.intranet.responders.exceptions.AlreadyExistsEntityException;
 import api.intranet.responders.exceptions.NotFoundException;
 import api.intranet.responders.exceptions.ProcessingError;
 import org.springframework.http.HttpStatus;
@@ -48,5 +49,12 @@ public class JsonErrorResponder {
     public ResponseEntity<String> handleNotFoundExceptions() {
         return ResponseEntity.ok()
                 .body("{\"message\":\"Not Found\"}");
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(AlreadyExistsEntityException.class)
+    public ResponseEntity<String> handleAlreadyExistsExceptions(AlreadyExistsEntityException e) {
+        return ResponseEntity.ok()
+                .body("{\"message\":\""+e.getMessage()+"\"}");
     }
 }
