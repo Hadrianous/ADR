@@ -1,7 +1,7 @@
 package api.intranet.responders;
 
 import api.intranet.domain.fetcher.output.GetFetcherOutput;
-import api.intranet.responders.exceptions.NotFoundException;
+import api.intranet.domain.exceptions.NotFoundException;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Optional;

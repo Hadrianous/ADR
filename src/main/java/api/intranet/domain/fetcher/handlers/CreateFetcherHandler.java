@@ -4,7 +4,7 @@ import api.intranet.domain.fetcher.Fetcher;
 import api.intranet.domain.fetcher.Fetchers;
 import api.intranet.domain.fetcher.input.NewFetcherInput;
 import api.intranet.domain.fetcher.output.GetFetcherOutput;
-import api.intranet.responders.exceptions.AlreadyExistsEntityException;
+import api.intranet.domain.exceptions.AlreadyExistsEntityException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;

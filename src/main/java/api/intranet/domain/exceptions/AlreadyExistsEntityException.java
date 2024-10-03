@@ -1,4 +1,4 @@
-package api.intranet.responders.exceptions;
+package api.intranet.domain.exceptions;
 
 public class AlreadyExistsEntityException extends RuntimeException {
     public AlreadyExistsEntityException(String message) {

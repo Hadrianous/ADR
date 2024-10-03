@@ -1,6 +1,5 @@
 package api.intranet.domain.fetcher;
 
-import api.intranet.domain.fetcher.input.NewFetcherInput;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,8 @@
 package api.intranet.responders;
 
-import api.intranet.responders.exceptions.AlreadyExistsEntityException;
-import api.intranet.responders.exceptions.NotFoundException;
-import api.intranet.responders.exceptions.ProcessingError;
+import api.intranet.domain.exceptions.AlreadyExistsEntityException;
+import api.intranet.domain.exceptions.NotFoundException;
+import api.intranet.domain.exceptions.ProcessingError;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
