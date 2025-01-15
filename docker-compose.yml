@@ -1,11 +1,11 @@
 services:
   intranet-db:
     image: postgres:16.2-alpine
-    container_name: intranet-db
+    container_name: adr-db
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=ù1nt24N3tù
-      - POSTGRES_DB=intranet
+      - POSTGRES_USER=moi
+      - POSTGRES_PASSWORD=ADR
+      - POSTGRES_DB=adr
       - PGDATA=/var/lib/postgresql/data/pgdata
     ports:
       - 5432:5432

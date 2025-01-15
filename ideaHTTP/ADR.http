@@ -1,0 +1,18 @@
+#@no-log
+GET http://localhost:8080/
+
+###
+#@no-log
+GET http://localhost:8080/fetcher/1
+
+###
+#@no-log
+POST http://localhost:8080/fetcher
+Content-Type: application/json
+
+{
+  "name": "sausage",
+  "url": "https://sausage.com/offers?lang=fr",
+  "type": "api",
+  "status": "ONLINE"
+}
