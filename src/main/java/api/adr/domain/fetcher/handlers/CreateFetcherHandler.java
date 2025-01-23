@@ -14,8 +14,11 @@ import java.util.Optional;
 @Service
 public class CreateFetcherHandler {
 
-    @Autowired
-    private Fetchers repository;
+    private final Fetchers repository;
+
+    CreateFetcherHandler(Fetchers repository) {
+        this.repository = repository;
+    }
 
     public Optional<GetFetcherOutput> execute(NewFetcherInput fetcherInput) {
         Fetcher fetcher = new Fetcher(

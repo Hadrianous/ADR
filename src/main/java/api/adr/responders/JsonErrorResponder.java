@@ -52,10 +52,10 @@ public class JsonErrorResponder {
         return result;
     }
 
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.CONFLICT)
     @ExceptionHandler(AlreadyExistsEntityException.class)
     public ResponseEntity<String> handleAlreadyExistsExceptions(AlreadyExistsEntityException e) {
-        return ResponseEntity.badRequest()
+        return ResponseEntity.status(409)
                 .body("{\"message\":\""+e.getMessage()+"\"}");
     }
 }

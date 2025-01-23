@@ -17,10 +17,10 @@ public class CreateFetcher {
 
     private final CreateFetcherHandler handler;
 
-    private final CreateFetcherJsonResponder responder;
+    private final CreateFetcherJsonResponder<GetFetcherOutput> responder;
 
     @Autowired
-    public CreateFetcher(CreateFetcherHandler handler, CreateFetcherJsonResponder responder) {
+    public CreateFetcher(CreateFetcherHandler handler, CreateFetcherJsonResponder<GetFetcherOutput> responder) {
         this.handler = handler;
         this.responder = responder;
     }
